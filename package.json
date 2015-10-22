@@ -1,0 +1,19 @@
+{
+  "name": "andela-eakinyele_searchindex",
+  "version": "0.1.0",
+  "description": "\"Builds and index for search queries\"",
+  "main": "invertedIndex.js",
+  "scripts": {
+    "test": "searchindex"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://andela-eakinyele@github.com/andela-eakinyele/inverted-index.git"
+  },
+  "author": "\"emmanuel akinyele\"",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andela-eakinyele/inverted-index/issues"
+  },
+  "homepage": "https://github.com/andela-eakinyele/inverted-index#readme"
+}
