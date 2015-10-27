@@ -35,6 +35,7 @@ function generateTokendata(obj, tokens, jsondata, indexname) {
 }
 // Search index
 function searching(obj, terms, indexname) {
+  if(terms == undefined || terms == '') return 'Enter search terms';
   var results = {};
   terms.forEach(function(item, index) {
     results[item] = [];
