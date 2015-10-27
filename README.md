@@ -12,18 +12,25 @@ The usage of the application is as follows:
 
 ### Search
 ####  Full index search
-  A full index search searches through all generated indices for all json file
-    This is executed by calling the *searchIndex(terms)*
+```
+  A full index search searches through all generated indices for all json files
+  This is executed by calling the *searchIndex(terms)*
+```
 
 ####  Index specifiers
-  Index specifier restricts searches to specific indices, *only one* specifier is implemented, further development will include multiple specifiers
+```
+  Index specifier restricts searches to specific index
+  *only one* specifier is implemented, further development will include multiple specifiers
   Index specifiers utilize the format in:indexname
+```
 
 ####  Search terms
+```
   Search may include either:
-  - strings containing one or more words
-  - Array of words
-  Note that to use specifiers in array, the specifier is must be the first element in the array
-    e.g ['in:books', 'Alice', 'powerful']
+  - strings containing one or more words e.g. 'I am Alice'
+  - Array of words e.g ['I', 'am', 'Alice']
+  Note that to use specifiers in array, the specifier must be the first element in the array
+      e.g ['in:books', 'Alice', 'powerful']
   For string the specifier may occur anywhere in the search string
   e.g 'alice in:users powerful'  or "alice powerful in:users"
+```

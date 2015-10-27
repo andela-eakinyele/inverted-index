@@ -1,4 +1,4 @@
-var index_all = '', tokens = '',  newdata = '';
+var index_all = '', tokens = '';
 
 function Index() {
   // variables for serializing indices
@@ -18,7 +18,7 @@ function Index() {
     obj.nindexes[new_index] = {};
     obj.jsondata[new_index] = {};
     // read file and generate index
-    obj.readjson(filepath, new_index)
+    obj.readjson(filepath, new_index);
     getTokens(index_all);
     generateTokendata(obj, tokens, obj.jsondata[new_index], new_index);
   };
@@ -78,7 +78,7 @@ function Index() {
   // reads the content ofthe JSON file, and builds index
   this.readjson = function(filepath, indexname) {
     // binding object
-    var obj = this;
+    var obj = this,  newdata = '';
       // ajax call to read json file
     $.ajax({
       dataType: "json",
