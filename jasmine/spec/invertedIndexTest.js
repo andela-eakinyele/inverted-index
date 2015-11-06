@@ -16,12 +16,17 @@ describe("Read book data", function() {
   
   it("Ensure JSON objects have string property", function() {
     expect(content).not.toEqual('empty json');
+    var keys = [];
+    function stringkey(element) {
+ 		return typeof element == 'string';
+	};
     var result = index.jsondata[indexname];
     for (var i in result) {
       for (var j in result[i]) {
-        expect(typeof j).toEqual('string');
+      	keys.push(j);
       }
     }
+    expect(keys.every(stringkey)).toBeTruthy();
   });
 });
 
