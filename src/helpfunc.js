@@ -23,12 +23,16 @@ function generateTokendata(obj, tokens, jsondata, indexname) {
   tokens.forEach(function(item, index) {
     obj.nindexes[indexname][item] = [];
     for (var keys in jsondata) {
-      loopb: for (var key in jsondata[keys]) {
-        var Str = jsondata[keys][key].toLowerCase();
-          if (Str.indexOf(item) > -1) {
-            obj.nindexes[indexname][item].push(keys);
-            break loopb;
+      if (hasOwn.call(jsondata, keys)){
+        loopb: for (var key in jsondata[keys]) {
+          if (hasOwn.call(jsondata[keys], key)){
+            var Str = jsondata[keys][key].toLowerCase();
+              if (Str.indexOf(item) > -1) {
+                obj.nindexes[indexname][item].push(keys);
+                break loopb;
+              }
           }
+        }
       }
     }
   });

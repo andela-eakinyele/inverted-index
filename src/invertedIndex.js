@@ -1,4 +1,4 @@
-var index_all = '', tokens = '';
+var index_all = '', tokens = '', hasOwn = Object.prototype.hasOwnProperty;
 
 function Index() {
   // variables for serializing indices
@@ -60,9 +60,11 @@ function Index() {
     else {
       var result_all = {};
       for (var key in obj.nindexes) {
-        result_all[key] = {};
-        result_all[key] = searching(obj, terms, key);
-	    }
+        if (hasOwn.call(obj.nindexes, key)){
+          result_all[key] = {};
+          result_all[key] = searching(obj, terms, key);
+  	    }
+      }
       return result_all;
     }
   };
@@ -95,7 +97,9 @@ function Index() {
     // concatenate content of each object to for building index
     newdata.forEach(function(item, index) {
       for (var key in item) {
-        index_all += ' ' + item[key];
+        if (hasOwn.call(item, key)){
+          index_all += ' ' + item[key];
+        }
       }
     });
   };
